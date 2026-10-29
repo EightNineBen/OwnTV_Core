@@ -56,6 +56,10 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
     private val _openSubtitlesConfigs = MutableSharedFlow<CompanionServiceConfig>(extraBufferCapacity = 4)
     val openSubtitlesConfigs: SharedFlow<CompanionServiceConfig> = _openSubtitlesConfigs.asSharedFlow()
 
+    /** Addon manifest links sent from the remote device in [startForAddonInstall] mode (this fork's addition). */
+    private val _addonUrls = MutableSharedFlow<String>(extraBufferCapacity = 4)
+    val addonUrls: SharedFlow<String> = _addonUrls.asSharedFlow()
+
     /** A fresh 6-digit PIN per [start], so a leaked code is short-lived. */
     @Volatile private var currentPin: String = ""
 
@@ -110,6 +114,7 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
 
     fun startForTmdbConfig(port: Int) = startInternal(port, CompanionMode.TMDB_CONFIG)
     fun startForOpenSubtitlesConfig(port: Int) = startInternal(port, CompanionMode.OPEN_SUBTITLES_CONFIG)
+    fun startForAddonInstall(port: Int) = startInternal(port, CompanionMode.ADDON_INSTALL)
 
     private fun startInternal(
         port: Int,
@@ -146,6 +151,7 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
                     when (mode) {
                         CompanionMode.TMDB_CONFIG -> _tmdbConfigs.tryEmit(config)
                         CompanionMode.OPEN_SUBTITLES_CONFIG -> _openSubtitlesConfigs.tryEmit(config)
+                        CompanionMode.ADDON_INSTALL -> _addonUrls.tryEmit(config.serverUrl)
                         else -> Unit
                     }
                 },

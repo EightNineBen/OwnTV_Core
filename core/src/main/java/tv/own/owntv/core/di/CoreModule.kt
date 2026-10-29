@@ -15,4 +15,6 @@ val coreModule = module {
     // for the picker and the named non-Compose renderers.
     single { LocaleStore.from(androidContext()) }
     single { SettingsRepository(androidContext(), get()) }
+    // Stremio-compatible addons (this fork's addition).
+    includes(tv.own.owntv.core.addons.addonsModule)
 }

@@ -20,7 +20,7 @@ class MainSectionTest {
         for (live in listOf(false, true)) for (movies in listOf(false, true)) for (series in listOf(false, true)) {
             assertTrue(MainSection.SPORTS in MainSection.dynamicVisible(live, movies, series))
         }
-        assertEquals(setOf(MainSection.HOME, MainSection.SPORTS), MainSection.dynamicVisible(false, false, false))
+        assertEquals(setOf(MainSection.HOME, MainSection.SPORTS, MainSection.ADDONS), MainSection.dynamicVisible(false, false, false))
     }
 
     @Test

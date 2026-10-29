@@ -22,6 +22,89 @@
 2	empty	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	ahXN00/OwnTV
 1	log	core/src/main/java/tv/own/owntv/core/CorePerf.kt	OwnTVPerf
+1	assertion	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	Not an addon manifest
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	adult
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	background
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	behaviorHints
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	bingeGroup
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	cast
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	catalogs
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	configurationRequired
+4	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	description
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	director
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	episode
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	extra
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	extraRequired
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	extraSupported
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	filename
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	genre
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	genres
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	http://
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	https://
+5	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	id
+4	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	idPrefixes
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	imdbRating
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	isRequired
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	lang
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	logo
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	meta
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	metas
+7	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	name
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	number
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	options
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	overview
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	poster
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	posterShape
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	proxyHeaders
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	releaseInfo
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	released
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	request
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	resources
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	runtime
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	season
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	streams
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	subtitles
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	thumbnail
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	title
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	type
+3	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	types
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	url
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	version
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	videoSize
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	videos
+1	json	core/src/main/java/tv/own/owntv/core/addons/AddonJson.kt	year
+1	protocol	core/src/main/java/tv/own/owntv/core/addons/AddonModels.kt	genre
+1	protocol	core/src/main/java/tv/own/owntv/core/addons/AddonModels.kt	search
+1	protocol	core/src/main/java/tv/own/owntv/core/addons/AddonModels.kt	skip
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	AddonRepository
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	HTTP ${it.code}
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	addon request failed: ${(e as? HttpClient.HttpStatusException)?.let { "HTTP ${it.code}" } ?: e.javaClass.simpleName}
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	installed addon id=${manifest.id} version=${manifest.version}
+1	protocol	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	meta
+1	protocol	core/src/main/java/tv/own/owntv/core/addons/AddonRepository.kt	stream
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	AddonStore
+1	preference-key	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	addons
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	installed addon list unreadable
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	manifest
+1	preference-key	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	owntv_addons
+1	log	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	stored manifest unreadable
+2	json	core/src/main/java/tv/own/owntv/core/addons/AddonStore.kt	transportUrl
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	&
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	-_.!~*'():
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	.json
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	/
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	/$MANIFEST
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	0123456789ABCDEF
+2	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	://
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	=
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	catalog
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	http://
+2	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	https://
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	https://$url
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	manifest.json
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	meta
+1	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	stream
+2	url	core/src/main/java/tv/own/owntv/core/addons/AddonUrls.kt	stremio://
 3	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	..
 2	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	Corrupt backup header
 2	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	Not an OwnTV backup file
@@ -332,7 +415,7 @@
 1	json	core/src/main/java/tv/own/owntv/core/companion/CompanionController.kt	{}
 4	empty	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	\0
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	"
-1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	%1$d
+2	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	%1$d
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	&
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	&amp;
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	&gt;
@@ -347,9 +430,11 @@
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.pinHeading.h()}</h1> <p>${c.pinDescription.h()}</p> ${if (error != null) "<p class=\\"err\\">${error.h()}</p>" else ""} <form method="post" action="/"> <input class="pin" name="pin" inputmode="numeric" pattern="[0-9]*" maxlength="6" autofocus placeholder="${c.pinPlaceholder.h()}" aria-label="${c.pinAria.h()}" required> <button class="go" type="submit">${c.continueLabel.h()}</button> </form> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${c.savedHeading.h()}</h1> <p>${body.h()}</p> <p><a href="/?pin=$pin">${c.savedSendAnother.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${heading.h()}</h1> <p>${description.h()}</p> <form id="f" onsubmit="return false"> <label>${fileLabel.h()} <input id="file" type="file" accept="$accept" required></label> <button class="go" id="send" type="submit">${c.sendToTv.h()}</button> </form> <p id="status" class="hint"></p> </div> <script> var f=document.getElementById('file'), b=document.getElementById('send'), s=document.getElementById('status'); document.getElementById('f').addEventListener('submit',function(){ var file=f.files&&f.files[0]; if(!file){s.textContent=${choose.js()};return false;} ${if (!backup) "if(file.size>25*1024*1024){s.textContent=${c.imageTooLarge.js()};return false;}" else ""} b.disabled=true; s.textContent=${c.sending.js()}; var r=new FileReader(); r.onload=function(){ fetch('$endpoint?pin=$pin',{method:'POST',headers:{'Content-Type':'$contentType'},body:r.result}) .then(function(res){ if(res.ok){document.open();res.text().then(function(t){document.write(t);document.close();});} else{b.disabled=false;s.textContent=${c.uploadFailed.js()}.replace('__STATUS__',String(res.status));} }) .catch(function(){b.disabled=false;s.textContent=${c.couldNotReach.js()};}); }; r.onerror=function(){b.disabled=false;s.textContent=${c.couldNotRead.js()};}; r.readAsDataURL(file); return false; }); </script>
+1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"> <h1>${title.h()}</h1><p>${description.h()}</p> <form id="f" onsubmit="return false"> <label>${label.h()} <input id="url" type="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="https://…/manifest.json"></label> <button class="go" id="send" type="submit">${send.h()}</button> </form><p id="status" class="hint"></p> </div> <script> var u=document.getElementById('url'),b=document.getElementById('send'),s=document.getElementById('status'); document.getElementById('f').addEventListener('submit',function(){ var body=new URLSearchParams({url:(u.value||'').trim()}).toString(); b.disabled=true;s.textContent=${sending.js()}; fetch('/addon?pin=$pin',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}) .then(function(res){if(res.ok){return res.text().then(function(t){document.open();document.write(t);document.close();});}return res.text().then(function(t){b.disabled=false;s.textContent=(res.status===400&&t)?t:${failed.js()}.replace('__STATUS__',String(res.status));});}) .catch(function(){b.disabled=false;s.textContent=${unreachable.js()};});return false; }); </script>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.downloadHeading.h()}</h1> <p>${c.downloadDescription.h()}</p> <a class="go" href="/backup.own?pin=$pin" download="owntv-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.savedHeading.h()}</h1> <p>${c.savedBackupBody.h()}</p><p><a href="/?pin=$pin">${c.savedBackupLink.h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.savedHeading.h()}</h1> <p>${c.savedImageBody.h()}</p><p><a href="/?pin=$pin">${c.savedImageLink.h()}</a></p> </div>
+1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${c.savedHeading.h()}</h1> <p>${context.getString(R.string.addons_companion_sent).h()}</p> <p><a href="/?pin=$pin">${context.getString(R.string.addons_companion_again).h()}</a></p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<div class="card"><h1>${context.getString(R.string.local_sync_browser_title).h()}</h1> <p>${context.getString(R.string.local_sync_browser_body).h()}</p> </div>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<label>${c.autoRefresh.h()} <select name="autoRefresh"> <option value="OFF" selected>${c.off.h()}</option> <option value="STARTUP">${c.refreshStartup.h()}</option> <option value="HOURS_6">${c.refresh6.h()}</option> <option value="HOURS_12">${c.refresh12.h()}</option> ${c.refreshDays.entries.joinToString("\\n ") { (days, label) ->
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<label>${label.h()} <select name="$name"> ${option("now", c.now)}${option("later", c.later)}${option("off", c.off)} </select></label>
@@ -358,7 +443,7 @@
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	<svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	>
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	MANUAL:$days
-1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	__STATUS__
+2	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	__STATUS__
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	application/json
 1	locale	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	en
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionHtml.kt	if(file.size>25*1024*1024){s.textContent=${c.imageTooLarge.js()};return false;}
@@ -426,9 +511,10 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpProtocol.kt	username
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpProtocol.kt	yes
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpProtocol.kt	{
-7	empty	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	\0
+8	empty	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	\0
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	"
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	/
+1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	/addon
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	/background
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	/backup
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	/backup.json
@@ -457,7 +543,7 @@
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	HTTP/1.1 200 OK
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Not Found
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	OK
-6	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	POST
+7	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	POST
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Payload Too Large
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	Unauthorized
 1	regex	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	^data:image/([a-zA-Z0-9.+-]+);base64,
@@ -465,6 +551,8 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	bmp
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	content-type
 1	mime	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	font/ttf
+1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	http://
+1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	https://
 1	json	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	id
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	jpeg
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	jpg
@@ -472,10 +560,12 @@
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	pin
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	png
 1	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	secret
+1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	stremio://
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	text/html; charset=utf-8
 1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	text/plain; charset=utf-8
+1	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	url
 2	protocol	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	webp
-7	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	x-companion-pin
+8	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	x-companion-pin
 3	uri	core/src/main/java/tv/own/owntv/core/companion/CompanionHttpServer.kt	{}
 1	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionLink.kt	10.
 2	technical	core/src/main/java/tv/own/owntv/core/companion/CompanionLink.kt	127.0.0.1

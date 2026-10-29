@@ -363,6 +363,22 @@ class CompanionHttpServer(
                 return sendHtml(socket, 200, CompanionHtml.serviceConfigSentPage(pageContext, pin))
             }
 
+            // A Stremio addon's manifest link (this fork's addition). The TV validates and installs it;
+            // here it only has to look like a link, so a typo is answered before it leaves the phone.
+            if (method == "POST" && path == "/addon") {
+                if (mode != CompanionMode.ADDON_INSTALL) return sendText(socket, 404, localized(R.string.companion_error_not_found))
+                val headerPin = headers["x-companion-pin"].orEmpty()
+                if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
+                val body = CompanionHttpProtocol.readBody(input, headers, CompanionHttpProtocol.maxBodyBytes(path))
+                    ?: return sendText(socket, 413, localized(R.string.companion_error_body_too_large))
+                val url = CompanionHttpProtocol.parseQuery(body)["url"].orEmpty().trim()
+                val linkLike = url.length in 8..4096 && url.none { it.isWhitespace() } &&
+                    listOf("https://", "http://", "stremio://").any { url.startsWith(it, ignoreCase = true) }
+                if (!linkLike) return sendText(socket, 400, localized(R.string.addons_companion_invalid))
+                onServiceConfig(CompanionServiceConfig(apiKey = "", serverUrl = url))
+                return sendHtml(socket, 200, CompanionHtml.addonSentPage(pageContext, pin))
+            }
+
             // Source submissions — PIN required (query or header), else 401.
             if (method == "POST" && (path == "/xtream" || path == "/m3u" || path == "/stalker")) {
                 val headerPin = headers["x-companion-pin"].orEmpty()
@@ -451,6 +467,7 @@ class CompanionHttpServer(
         // Local sync has no browser side. Someone who opens the address in a browser and types the
         // PIN gets told so rather than a blank page.
         CompanionMode.LOCAL_SYNC -> CompanionHtml.localSyncPage(context)
+        CompanionMode.ADDON_INSTALL -> CompanionHtml.addonInstallPage(context, pin)
     }
 
     /**

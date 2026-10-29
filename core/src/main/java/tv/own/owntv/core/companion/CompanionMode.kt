@@ -8,6 +8,8 @@ package tv.own.owntv.core.companion
  *  - [IMAGE_UPLOAD] — an upload page the remote device uses to send a background image to the TV;
  *  - [TMDB_CONFIG] / [OPEN_SUBTITLES_CONFIG] — a page the remote device uses to send a service's key
  *    and server (and, for OpenSubtitles, the account) to the TV;
+ *  - [ADDON_INSTALL] — a one-field page the remote device uses to send a Stremio addon's manifest link
+ *    to the TV (this fork's addition), so a long configured addon URL never has to be typed on a remote;
  *  - [LOCAL_SYNC] — the only mode with no web page behind it: the other OwnTV app on the same Wi-Fi
  *    talks to it directly. It accepts a backup upload AND serves this device's own export, because a
  *    merge sends and receives in one session, and it answers `/sync/hello` and `/sync/pair` so the
@@ -18,7 +20,7 @@ package tv.own.owntv.core.companion
  *
  * One server, one PIN gate; the mode only changes which page is served and which endpoint is accepted.
  */
-enum class CompanionMode { ADD_SOURCE, BACKUP_RESTORE, BACKUP_DOWNLOAD, IMAGE_UPLOAD, TMDB_CONFIG, OPEN_SUBTITLES_CONFIG, LOCAL_SYNC }
+enum class CompanionMode { ADD_SOURCE, BACKUP_RESTORE, BACKUP_DOWNLOAD, IMAGE_UPLOAD, TMDB_CONFIG, OPEN_SUBTITLES_CONFIG, LOCAL_SYNC, ADDON_INSTALL }
 
 /**
  * A service setup handed over from the remote browser.

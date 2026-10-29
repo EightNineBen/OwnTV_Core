@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Stremio-compatible addons (this fork's addition). -->
+    <!-- Translators: Navigation item and page title for Stremio-compatible addons. -->
+    <string name="addons_nav">Addons</string>
+    <string name="addons_manage">Manage addons</string>
+    <string name="addons_search">Search</string>
+    <string name="addons_search_title">Search your addons</string>
+    <string name="addons_search_label">Title</string>
+    <string name="addons_search_results">Results for “<xliff:g id="query" example="Dune">%1$s</xliff:g>”</string>
+    <string name="addons_search_clear">Clear search</string>
+    <string name="addons_search_empty">Nothing found for “<xliff:g id="query" example="Dune">%1$s</xliff:g>”.</string>
+    <string name="addons_searching">Searching…</string>
+    <string name="addons_add">Add addon</string>
+    <string name="addons_add_title">Add an addon</string>
+    <string name="addons_add_label">Manifest URL</string>
+    <string name="addons_add_hint">Paste the addon\'s manifest link, for example https://v3-cinemeta.strem.io/manifest.json. stremio:// links work too. Only direct links (such as debrid) are played; torrents are skipped.</string>
+    <string name="addons_add_confirm">Install</string>
+    <string name="addons_installing">Installing…</string>
+    <string name="addons_installed"><xliff:g id="addon" example="Cinemeta">%1$s</xliff:g> installed</string>
+    <string name="addons_invalid_url">That doesn\'t look like an addon link.</string>
+    <string name="addons_unreachable">Couldn\'t load an addon manifest from that link.</string>
+    <string name="addons_needs_config"><xliff:g id="addon" example="Torrentio">%1$s</xliff:g> has to be configured on its website first. Install the link it gives you after that.</string>
+    <string name="addons_empty">No addons yet. Add one to start browsing.</string>
+    <string name="addons_add_cinemeta">Add Cinemeta</string>
+    <string name="addons_no_catalogs">Your addons have no catalogs to browse.</string>
+    <string name="addons_row_empty">Nothing here.</string>
+    <string name="addons_catalog_row"><xliff:g id="catalog" example="Popular">%1$s</xliff:g> · <xliff:g id="addon" example="Cinemeta">%2$s</xliff:g></string>
+    <string name="addons_remove">Remove</string>
+    <string name="addons_move_up">Move up</string>
+    <string name="addons_move_down">Move down</string>
+    <string name="addons_version">Version <xliff:g id="version" example="3.0.12">%1$s</xliff:g></string>
+    <string name="addons_find_streams">Find streams</string>
+    <string name="addons_detail_loading">Loading details…</string>
+    <string name="addons_detail_unavailable">None of your addons has details for this title.</string>
+    <string name="addons_season">Season <xliff:g id="season" example="1">%1$d</xliff:g></string>
+    <string name="addons_specials">Specials</string>
+    <string name="addons_no_episodes">No episodes listed.</string>
+    <string name="addons_streams_title">Streams</string>
+    <string name="addons_streams_searching"><xliff:g id="addon" example="Torrentio">%1$s</xliff:g> is searching…</string>
+    <string name="addons_streams_failed"><xliff:g id="addon" example="Torrentio">%1$s</xliff:g> didn\'t answer.</string>
+    <string name="addons_streams_none">No direct links from <xliff:g id="addon" example="Torrentio">%1$s</xliff:g>.</string>
+    <string name="addons_streams_no_sources">None of your addons provides streams for this title.</string>
+    <!-- Settings › Addons, and the phone page that sends an addon link to the TV. -->
+    <string name="addons_settings_description">Stremio-compatible addons: catalogs, details and direct (debrid) streams</string>
+    <string name="addons_settings_empty_body">Add Cinemeta for catalogs and details, then a stream addon configured with your debrid service.</string>
+    <string name="addons_order_line">Asked <xliff:g id="position" example="1">%1$d</xliff:g> of <xliff:g id="count" example="3">%2$d</xliff:g>: higher addons answer details first and list their streams first.</string>
+    <string name="addons_remove_title">Remove <xliff:g id="addon" example="Torrentio">%1$s</xliff:g>?</string>
+    <string name="addons_remove_message">Its catalogs and streams disappear from Addons. You can install it again with the same link.</string>
+    <string name="addons_line_add_from_phone">Paste the addon link in a browser on another device</string>
+    <string name="addons_help_add_from_phone">Open the address or scan the code in a browser on any device on the same Wi-Fi, paste the addon\'s manifest link (from its configure page) and send it here. Much faster than typing a long link with the remote.</string>
+    <string name="addons_line_add_type_here">Type the manifest link with the remote</string>
+    <string name="addons_help_add_type_here">Type the addon\'s manifest link with the remote. stremio:// links work too.</string>
+    <string name="addons_companion_description">Paste the addon\'s manifest link. For an addon you configure (for example with a debrid key), copy the link its configure page gives you.</string>
+    <string name="addons_companion_invalid">That doesn\'t look like an addon link. It should start with https://, http:// or stremio://.</string>
+    <string name="addons_companion_sent">The addon link is on your TV, which is installing it now.</string>
+    <string name="addons_companion_again">Send another addon</string>
+    <!-- Translators: Comma-separated words that find Settings › Addons in the settings search. -->
+    <string name="addons_search_keywords">addons, stremio, nuvio, debrid, catalog, streams, cinemeta</string>
+</resources>

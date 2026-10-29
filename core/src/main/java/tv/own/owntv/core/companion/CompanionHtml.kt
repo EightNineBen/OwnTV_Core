@@ -449,6 +449,49 @@ internal object CompanionHtml {
         """.trimIndent())
     }
 
+    /**
+     * Addon install (this fork's addition): paste a Stremio addon's manifest link and send it to the TV.
+     * Configured addons (a debrid key in the path) make for links far too long to type with a remote.
+     */
+    fun addonInstallPage(context: Context, pin: String): String {
+        val title = context.getString(R.string.addons_add_title)
+        val description = context.getString(R.string.addons_companion_description)
+        val label = context.getString(R.string.addons_add_label)
+        val send = context.getString(R.string.companion_send_to_tv)
+        val sending = context.getString(R.string.companion_sending)
+        val failed = context.getString(R.string.companion_upload_failed).replace("%1\$d", "__STATUS__")
+        val unreachable = context.getString(R.string.companion_could_not_reach)
+        return page(context, title, """
+            <div class="card">
+              <h1>${title.h()}</h1><p>${description.h()}</p>
+              <form id="f" onsubmit="return false">
+                <label>${label.h()} <input id="url" type="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="https://…/manifest.json"></label>
+                <button class="go" id="send" type="submit">${send.h()}</button>
+              </form><p id="status" class="hint"></p>
+            </div>
+            <script>
+              var u=document.getElementById('url'),b=document.getElementById('send'),s=document.getElementById('status');
+              document.getElementById('f').addEventListener('submit',function(){
+                var body=new URLSearchParams({url:(u.value||'').trim()}).toString();
+                b.disabled=true;s.textContent=${sending.js()};
+                fetch('/addon?pin=$pin',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+                  .then(function(res){if(res.ok){return res.text().then(function(t){document.open();document.write(t);document.close();});}return res.text().then(function(t){b.disabled=false;s.textContent=(res.status===400&&t)?t:${failed.js()}.replace('__STATUS__',String(res.status));});})
+                  .catch(function(){b.disabled=false;s.textContent=${unreachable.js()};});return false;
+              });
+            </script>
+        """.trimIndent())
+    }
+
+    fun addonSentPage(context: Context, pin: String): String {
+        val c = Copy(context)
+        return page(context, c.savedTitle, """
+            <div class="card"><h1>${c.savedHeading.h()}</h1>
+              <p>${context.getString(R.string.addons_companion_sent).h()}</p>
+              <p><a href="/?pin=$pin">${context.getString(R.string.addons_companion_again).h()}</a></p>
+            </div>
+        """.trimIndent())
+    }
+
     fun imageSentPage(context: Context, pin: String): String {
         val c = Copy(context)
         return page(context, c.savedTitle, """
