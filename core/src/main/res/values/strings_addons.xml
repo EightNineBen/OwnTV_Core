@@ -25,7 +25,12 @@
     <string name="addons_add_cinemeta">Add Cinemeta</string>
     <string name="addons_no_catalogs">Your addons have no catalogs to browse.</string>
     <string name="addons_row_empty">Nothing here.</string>
-    <string name="addons_catalog_row"><xliff:g id="catalog" example="Popular">%1$s</xliff:g> · <xliff:g id="addon" example="Cinemeta">%2$s</xliff:g></string>
+    <string name="addons_catalog_row"><xliff:g id="catalog" example="Popular">%1$s</xliff:g> <xliff:g id="type" example="Movies">%2$s</xliff:g> · <xliff:g id="addon" example="Cinemeta">%3$s</xliff:g></string>
+    <string name="addons_type_movie">Movies</string>
+    <string name="addons_type_series">Series</string>
+    <string name="addons_type_anime">Anime</string>
+    <string name="addons_type_channel">Channels</string>
+    <string name="addons_type_tv">TV</string>
     <string name="addons_remove">Remove</string>
     <string name="addons_move_up">Move up</string>
     <string name="addons_move_down">Move down</string>

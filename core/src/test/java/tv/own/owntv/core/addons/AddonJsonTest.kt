@@ -112,8 +112,8 @@ class AddonJsonTest {
         val s = AddonJson.streams(
             JSONObject("""{"streams":[{"name":"[RD+] Torrentio\n1080p","title":"Movie.1080p.mkv\n👤 12 💾 1,5 GB ⚙️ TPB","url":"https://rd.example/dl/2"}]}"""),
         ).single()
-        assertEquals((1.5 * (1L shl 30)).toLong(), s.sizeBytes)
-        assertEquals(700L shl 20, AddonJson.sizeFromText("700 MB"))
+        assertEquals(1_500_000_000L, s.sizeBytes)
+        assertEquals(700_000_000L, AddonJson.sizeFromText("700 MB"))
         assertNull(AddonJson.sizeFromText("4K HDR"))
     }
 

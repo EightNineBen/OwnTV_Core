@@ -139,16 +139,17 @@ object AddonJson {
 
     /**
      * A size written into a stream's text, as most debrid addons do instead of `videoSize`
-     * (`👤 12 💾 1.81 GB ⚙️ TPB`). Binary units, like the file managers people compare it with.
+     * (`👤 12 💾 1.81 GB ⚙️ TPB`). Decimal units, the ones Android formats sizes back in, so the
+     * size shown is the size the addon wrote.
      */
     internal fun sizeFromText(text: String?): Long? {
         val match = SIZE.find(text ?: return null) ?: return null
         val value = match.groupValues[1].replace(',', '.').toDoubleOrNull() ?: return null
         val unit = when (match.groupValues[2].uppercase()) {
-            "TB" -> 1L shl 40
-            "GB" -> 1L shl 30
-            "MB" -> 1L shl 20
-            else -> 1L shl 10
+            "TB" -> 1_000_000_000_000L
+            "GB" -> 1_000_000_000L
+            "MB" -> 1_000_000L
+            else -> 1_000L
         }
         return (value * unit).toLong().takeIf { it > 0 }
     }
