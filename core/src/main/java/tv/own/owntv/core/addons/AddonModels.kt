@@ -106,8 +106,17 @@ data class MetaDetail(
     val id: String get() = preview.id
     val type: String get() = preview.type
 
+    /**
+     * Whether the title is played one video at a time. A movie that lists itself as its only video
+     * (Kitsu does) is still a movie: Stremio asks for its streams by the meta id.
+     */
+    val episodic: Boolean get() = videos.isNotEmpty() && !(videos.size == 1 && videos[0].id == id)
+
     /** Season numbers in order, specials (season 0) last, as Stremio itself lists them. */
     val seasons: List<Int> get() = videos.mapNotNull { it.season }.distinct().sortedWith(compareBy({ it == 0 }, { it }))
+
+    /** A channel's videos, which carry no season at all, in the addon's order. Empty when there are seasons. */
+    val unseasoned: List<MetaVideo> get() = if (seasons.isEmpty()) videos else emptyList()
 
     fun episodes(season: Int): List<MetaVideo> =
         videos.filter { it.season == season }.sortedBy { it.episode ?: Int.MAX_VALUE }

@@ -126,13 +126,34 @@ object AddonJson {
             title = json.str("description") ?: json.str("title"),
             headers = headers,
             filename = hints?.str("filename"),
-            sizeBytes = hints?.optLong("videoSize")?.takeIf { it > 0 },
+            sizeBytes = hints?.optLong("videoSize")?.takeIf { it > 0 }
+                ?: sizeFromText(json.str("description"))
+                ?: sizeFromText(json.str("title"))
+                ?: sizeFromText(json.str("name")),
             bingeGroup = hints?.str("bingeGroup"),
             subtitles = json.optJSONArray("subtitles").objects().mapNotNull { s ->
                 s.str("url")?.let { AddonSubtitle(s.str("id"), it, s.str("lang")) }
             },
         )
     }
+
+    /**
+     * A size written into a stream's text, as most debrid addons do instead of `videoSize`
+     * (`👤 12 💾 1.81 GB ⚙️ TPB`). Binary units, like the file managers people compare it with.
+     */
+    internal fun sizeFromText(text: String?): Long? {
+        val match = SIZE.find(text ?: return null) ?: return null
+        val value = match.groupValues[1].replace(',', '.').toDoubleOrNull() ?: return null
+        val unit = when (match.groupValues[2].uppercase()) {
+            "TB" -> 1L shl 40
+            "GB" -> 1L shl 30
+            "MB" -> 1L shl 20
+            else -> 1L shl 10
+        }
+        return (value * unit).toLong().takeIf { it > 0 }
+    }
+
+    private val SIZE = Regex("""(\d+(?:[.,]\d+)?)\s*(TB|GB|MB|KB)\b""", RegexOption.IGNORE_CASE)
 
     // -- org.json helpers: missing, null and blank all read as absent. ----------------------------
 

@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.json.JSONObject
+import tv.own.owntv.core.addons.AddonSubtitle
 import tv.own.owntv.core.database.entity.EpisodeEntity
 import tv.own.owntv.core.database.entity.MovieEntity
 import tv.own.owntv.core.database.entity.SeriesEntity
@@ -66,6 +67,9 @@ class SubtitleController(
     // generating a fresh (numbered) one — see [rawTrackLabel].
     private val pathToLabel = HashMap<String, String>()
 
+    // What the addon listed with the stream now playing; see [setAddonStream].
+    private var addonSubtitles: List<AddonSubtitle> = emptyList()
+
     init {
         // Re-list a title's previously downloaded subtitles whenever its file finishes loading.
         // They're attached but not selected — the user re-picks.
@@ -98,6 +102,7 @@ class SubtitleController(
 
     fun setMovie(profileId: Long, movie: MovieEntity, tmdbId: Long?, localFilePath: String? = null) {
         if (profileId < 0) return clear()
+        addonSubtitles = emptyList()
         _current.value = Context(
             profileId = profileId,
             contentKey = movieKey(movie),
@@ -113,6 +118,7 @@ class SubtitleController(
 
     fun setEpisode(profileId: Long, show: SeriesEntity, episode: EpisodeEntity, parentTmdbId: Long?, localFilePath: String? = null) {
         if (profileId < 0) return clear()
+        addonSubtitles = emptyList()
         _current.value = Context(
             profileId = profileId,
             contentKey = episodeKey(show, episode),
@@ -126,7 +132,19 @@ class SubtitleController(
         )
     }
 
-    fun clear() { _current.value = null }
+    fun clear() {
+        _current.value = null
+        addonSubtitles = emptyList()
+    }
+
+    /**
+     * An addon stream is about to play. It has no library identity, so there is no search or timing
+     * memory; the [subtitles] the addon listed with it are attached, unselected, once the file loads.
+     */
+    fun setAddonStream(subtitles: List<AddonSubtitle>) {
+        _current.value = null
+        addonSubtitles = subtitles
+    }
 
     /** True when the active profile can search/download (signed in to OpenSubtitles). */
     fun isSignedIn(): Boolean {
@@ -335,7 +353,7 @@ class SubtitleController(
 
     /** Re-attach (unselected) every subtitle previously downloaded for the current item, on file load. */
     private fun restoreForCurrentItem() {
-        val ctx = _current.value ?: return
+        val ctx = _current.value ?: return restoreAddonSubtitles()
         scope.launch {
             val subs = runCatching { repository.restoreForContent(ctx.profileId, ctx.contentKey) }.getOrNull().orEmpty()
             if (subs.isEmpty()) return@launch
@@ -350,6 +368,24 @@ class SubtitleController(
                         title = rawTrackLabel(s, taken).also(taken::add),
                         lang = s.language,
                         source = s.playerSource(),
+                    )
+                },
+            )
+        }
+    }
+
+    private fun restoreAddonSubtitles() {
+        val subs = addonSubtitles.ifEmpty { return }
+        scope.launch {
+            val taken = labelsInUse()
+            player.restoreExternalSubtitles(
+                subs.map { s ->
+                    OwnTVPlayer.ExternalSub(
+                        path = s.url,
+                        title = pathToLabel.getOrPut(s.url) {
+                            SubtitleTrackLabel.build(SubtitleTrackLabel.PREFIX_ADDON, s.lang, null, s.id ?: "sub", taken)
+                        }.also(taken::add),
+                        lang = s.lang,
                     )
                 },
             )

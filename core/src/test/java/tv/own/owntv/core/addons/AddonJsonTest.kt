@@ -106,4 +106,32 @@ class AddonJsonTest {
         assertEquals("torrentio|4k", s.bingeGroup)
         assertEquals("eng", s.subtitles.single().lang)
     }
+
+    @Test
+    fun `size falls back to the stream text`() {
+        val s = AddonJson.streams(
+            JSONObject("""{"streams":[{"name":"[RD+] Torrentio\n1080p","title":"Movie.1080p.mkv\n👤 12 💾 1,5 GB ⚙️ TPB","url":"https://rd.example/dl/2"}]}"""),
+        ).single()
+        assertEquals((1.5 * (1L shl 30)).toLong(), s.sizeBytes)
+        assertEquals(700L shl 20, AddonJson.sizeFromText("700 MB"))
+        assertNull(AddonJson.sizeFromText("4K HDR"))
+    }
+
+    @Test
+    fun `a movie listing itself as its one video is not episodic`() {
+        val movie = AddonJson.meta(
+            JSONObject("""{"meta":{"id":"kitsu:11614","type":"movie","name":"Your Name","videos":[{"id":"kitsu:11614","season":1,"episode":1}]}}"""),
+        )!!
+        assertFalse(movie.episodic)
+    }
+
+    @Test
+    fun `channel videos without seasons are listed as they come`() {
+        val channel = AddonJson.meta(
+            JSONObject("""{"meta":{"id":"yt_id:UC1","type":"channel","name":"A channel","videos":[{"id":"yt_id:UC1:b","title":"B"},{"id":"yt_id:UC1:a","title":"A"}]}}"""),
+        )!!
+        assertTrue(channel.episodic)
+        assertEquals(emptyList<Int>(), channel.seasons)
+        assertEquals(listOf("yt_id:UC1:b", "yt_id:UC1:a"), channel.unseasoned.map { it.id })
+    }
 }

@@ -28,6 +28,8 @@ object SubtitleTrackLabel {
 
     const val PREFIX_OPENSUB = "OS"
     const val PREFIX_LOCAL = "LOCAL"
+    /** Listed by a Stremio addon alongside the stream. */
+    const val PREFIX_ADDON = "ADDON"
 
     /** Beyond this a release name is cut — TV rows ellipsize, and the tail is the informative half. */
     private const val MAX_RELEASE_CHARS = 30
