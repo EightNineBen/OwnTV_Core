@@ -151,6 +151,9 @@ class HttpClient(private val client: OkHttpClient) {
             // non-Xtream path of the same shape loses two segments of a log line, never a secret.
             .replace(SHORT_XTREAM_PATH, "$1•••/•••/$2")
             .replace(USERINFO, "$1***@")
+            // Debrid and addon links carry the account key, or a config holding it, as a long opaque
+            // path segment (StremThru, TorBox, Real-Debrid). A file name has a dot, so it stays readable.
+            .replace(OPAQUE_SEGMENT, "/•••")
 
         // Compiled once: redactUrl runs on every logged HTTP response and every play() line, several times
         // a second while a live channel plays with detailed logging on.
@@ -162,6 +165,8 @@ class HttpClient(private val client: OkHttpClient) {
         // Userinfo credentials in a `scheme://user:pass@host` URL (e.g. a proxy URL handed to mpv, or any
         // source URL with embedded creds).
         private val USERINFO = Regex("(?i)(://)([^/@:]+)(:[^/@]*)?@")
+        // 24+ characters of token alphabet and no dot, as a whole path segment.
+        private val OPAQUE_SEGMENT = Regex("/[A-Za-z0-9_~+=%-]{24,}(?![A-Za-z0-9_~+=%.-])")
 
         /** Mask a bare hostname for display (logs, errors), as [redactUrl] masks a URL's credentials: the
          *  provider's host identifies the account's panel as surely as the credentials do. */

@@ -62,4 +62,17 @@ class RedactUrlTest {
             "http://cdn.invalid/a/b/c/123.ts",
         ).forEach { assertEquals(it, redact(it)) }
     }
+
+    @Test
+    fun `debrid keys in the path are masked, file names are not`() {
+        assertEquals(
+            "https://stremthru.invalid/stremio/torz/•••/manifest.json",
+            redact("https://stremthru.invalid/stremio/torz/eyJzdG9yZXMiOlt7ImMiOiJ0YiIsInQiOiJhYmMifV19/manifest.json"),
+        )
+        assertEquals(
+            "https://st.invalid/v0/store/tb/•••/•••/Movie.2160p.mkv",
+            redact("https://st.invalid/v0/store/tb/0123456789abcdef0123456789abcdef/MTIzNDU2Nzg5MDEyMzQ1Njc4OTA=/Movie.2160p.mkv"),
+        )
+        assertEquals("Opening https://dl.invalid/•••: 403", redact("Opening https://dl.invalid/aB3dE6gH9jK2mN5pQ8sT1vW4yZ7: 403"))
+    }
 }

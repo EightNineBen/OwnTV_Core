@@ -2426,6 +2426,8 @@
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(://)([^/@:]+)(:[^/@]*)?@
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(://[^/]+/(?:live|movie|series|vod|timeshift)/)([^/]+)/([^/]+)/
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	(?i)(username|password|user|pass|token|data|auth|signature|sig|key|mac)=[^&]*
+1	regex	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	/[A-Za-z0-9_~+=%-]{24,}(?![A-Za-z0-9_~+=%.-])
+1	technical	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	/•••
 2	protocol	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	Content-Encoding
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET body done url=$safeUrl totalMs=${SystemClock.elapsedRealtime() - startedAt}
 1	log	core/src/main/java/tv/own/owntv/core/network/HttpClient.kt	GET body progress url=$label bytes=$bytesRead total=${totalBytes ?: -1}
